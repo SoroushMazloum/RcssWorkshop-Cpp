@@ -10,7 +10,7 @@ int main()
     cin>>number;
     if(number <= 0)
     {
-        cout<<"Number shouldn't be zero or negetive!"<<endl;
+        cout<<"Number shouldn't be zero or negative!";
         return 0;
     }
     double firstGuess = number / 2;
