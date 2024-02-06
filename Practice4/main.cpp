@@ -1,12 +1,14 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cmath>
 
 using namespace std;
 
 double Average(vector <pair<string, double>>);
 void FirstThreeStudenst(vector <pair<string, double>>);
 void UnderTenGrade(vector <pair<string, double>>);
+void Categorize(vector <pair<string, double>>);
 
 int main()
 {
@@ -34,6 +36,8 @@ int main()
     cout<<"Average: "<<Average(studentsData)<<endl;
     FirstThreeStudenst(studentsData);
     UnderTenGrade(studentsData);
+    Categorize(studentsData);
+
     return 0;
 }
 
@@ -77,5 +81,38 @@ void UnderTenGrade(vector<pair<string, double>> students)
         {
             cout<<"Name: "<<students.at(i).first<<"   Grade: "<<students.at(i).second<<endl;
         }
+    }
+}
+
+void Categorize(vector<pair<string, double>> students)
+{
+    for(int i = 0 ; i < students.size() - 1 ; i++)
+    {
+        for(int j = i + 1 ; j < students.size() ; j++)
+        {
+            if(students.at(i).second < students.at(j).second)
+            {
+                swap(students.at(i), students.at(j));
+            }
+        }
+    }
+    int groupMembersCount = round(double(students.size()) / double(3));
+    if(groupMembersCount < 1)
+        groupMembersCount = 1;
+
+    cout<<endl<<"Goup A: "<<endl;
+    for(int i = 0 ; i < groupMembersCount ; i++)
+    {
+        cout<<"Name: "<<students.at(i).first<<"   Grade: "<<students.at(i).second<<endl;
+    }
+    cout<<endl<<"Group B: "<<endl;
+    for(int i = groupMembersCount ; i < 2 * groupMembersCount ; i++)
+    {
+        cout<<"Name: "<<students.at(i).first<<"   Grade: "<<students.at(i).second<<endl;
+    }
+    cout<<endl<<"Group C: "<<endl;
+    for(int i = 2 * groupMembersCount ; i < students.size() ; i++)
+    {
+        cout<<"Name: "<<students.at(i).first<<"   Grade: "<<students.at(i).second<<endl;
     }
 }
