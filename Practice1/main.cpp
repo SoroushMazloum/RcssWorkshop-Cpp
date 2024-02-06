@@ -17,7 +17,7 @@ int main()
 
     double result = SquareRoot(number, firstGuess);
 
-    cout<<"Square root of is: "<<result<<std::endl;
+    cout<<"Square root of is: "<<result<<endl;
 
     return 0;
 }
@@ -26,7 +26,7 @@ double SquareRoot(double number, double guess)
 {
     double new_guess = 0.5 * (guess + number / guess);
     
-    if (std::abs(new_guess - guess) < 0.01) {
+    if (abs(new_guess - guess) < 0.01) {
         return new_guess;
     } else {
         return SquareRoot(number, new_guess);
