@@ -4,7 +4,9 @@
 
 using namespace std;
 
+double Average(vector <pair<string, double>>);
 void FirstThreeStudenst(vector <pair<string, double>>);
+void UnderTenGrade(vector <pair<string, double>>);
 
 int main()
 {
@@ -28,8 +30,21 @@ int main()
         nameAndGrade.second = grade;
         studentsData.push_back(nameAndGrade);
     }
+    cout<<endl<<"-------------------"<<endl;
+    cout<<"Average: "<<Average(studentsData)<<endl;
     FirstThreeStudenst(studentsData);
+    UnderTenGrade(studentsData);
     return 0;
+}
+
+double Average(vector<pair<string, double>> students)
+{
+    double average = 0;
+    for(int i = 0 ; i < students.size() ; i++)
+    {
+        average += students.at(i).second;
+    }
+    return average / students.size();
 }
 
 void FirstThreeStudenst(vector<pair<string, double>> students)
@@ -50,5 +65,17 @@ void FirstThreeStudenst(vector<pair<string, double>> students)
         if(i >= 3)
             break;
         cout<<"Name: "<<students.at(i).first<<"   Grade: "<<students.at(i).second<<endl;
+    }
+}
+
+void UnderTenGrade(vector<pair<string, double>> students)
+{
+    cout<<"Students with grade less than 10: "<<endl;
+    for(int i = 0 ; i < students.size() ; i++)
+    {
+        if(students.at(i).second < 10)
+        {
+            cout<<"Name: "<<students.at(i).first<<"   Grade: "<<students.at(i).second<<endl;
+        }
     }
 }
