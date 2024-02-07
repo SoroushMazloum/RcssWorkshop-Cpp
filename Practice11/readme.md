@@ -5,8 +5,10 @@
 
 خروجی:
 
-    * 
+    *
    * * 
   * * * 
  * * * * 
 * * * * * 
+
+ ![11](https://github.com/SoroushGit/RcssWorkshop-Cpp/assets/120305068/9fa3dec7-c5cb-4c05-b731-fe77e9fdf464)
