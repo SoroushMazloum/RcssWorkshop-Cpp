@@ -17,4 +17,5 @@ int main()
     }
     cout<<"Sum: "<<sum<<endl;
     cout<<"Multiplication: "<<multiplication<<endl;
+    return 0;
 }
