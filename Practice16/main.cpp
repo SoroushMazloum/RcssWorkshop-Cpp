@@ -16,7 +16,6 @@ int main()
     int number;
     cout<<"Enter number of students: ";
     cin>>number;
-    cin.clear();
     for(int i = 1 ; i <= number ; i++)
     {
         cin.ignore(100,'\n');
@@ -24,7 +23,6 @@ int main()
         double grade;
         cout<<"Enter the name of student "<<i<<" : ";
         getline(cin, name);
-        cin.clear();
         cout<<"Enter his/her grade: ";
         cin>>grade;
         pair<string, double> nameAndGrade;
@@ -74,7 +72,7 @@ void FirstThreeStudenst(vector<pair<string, double>> students)
 
 void UnderTenGrade(vector<pair<string, double>> students)
 {
-    cout<<"Students with grade less than 10: "<<endl;
+    cout<<"Student(s) with grade less than 10: "<<endl;
     for(int i = 0 ; i < students.size() ; i++)
     {
         if(students.at(i).second < 10)
