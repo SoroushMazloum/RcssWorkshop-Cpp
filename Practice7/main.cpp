@@ -56,14 +56,15 @@ int main()
     int row, col;
     cout<<"Enter the row and column for the bishop (1-8): ";
     cin>>col>>row;
-    col--;
-    row--;
 
     if (row < 1 || row > N || col < 1 || col > N)
     {
         cout<<"Invalid input. Please enter row and column between 0 and 8.\n";
         return 1;
     }
+    
+    col--;
+    row--;
 
     PlaceBishop(chessBoard, row, col);
 
